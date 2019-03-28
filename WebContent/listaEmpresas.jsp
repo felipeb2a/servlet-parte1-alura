@@ -3,6 +3,7 @@
 <%@page import="br.com.alura.gerenciador.servlet.Empresa"%>
 <%@page import="java.util.List"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,8 @@
 	<br />
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			<li>${empresa.nome}</li>
+			
+			<li>${empresa.nome} - <fmt:formatDate pattern="dd/MM/yyyy" value="${empresa.dataAbertura}"/></li>
 		</c:forEach>
 	</ul>
 </body>
